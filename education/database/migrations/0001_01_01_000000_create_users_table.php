@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -35,6 +36,24 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        User::create([
+            "name" => "Teszt Elek",
+            "email" => "teszt1@gmail.com",
+            "password" => "aaa",
+        ]);
+
+        User::create([
+            "name" => "Teszt Hanna",
+            "email" => "teszt2@gmail.com",
+            "password" => "aaa1",
+        ]);
+
+        User::create([
+            "name" => "Teszt Peti",
+            "email" => "teszt3@gmail.com",
+            "password" => "aaa213",
+        ]);
     }
 
     /**
