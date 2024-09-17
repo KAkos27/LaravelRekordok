@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Project;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -22,6 +23,33 @@ return new class extends Migration
             $table->foreignId('project_id')->references('id')->on('projects');
             $table->timestamps();
         });
+
+        Project::create([
+            "title" => "felmosóvíz készítés",
+            "description" => "teszt",
+            "end_date" => "2024-12-01",
+            "status" => 0,
+            "user_id" => 1,
+            "project_id" => 1
+        ]);
+
+        Project::create([
+            "title" => "valami",
+            "description" => "teszt",
+            "end_date" => "2025-11-21",
+            "status" => 0,
+            "user_id" => 1,
+            "project_id" => 1
+        ]);
+
+        Project::create([
+            "title" => "víz melegítés",
+            "description" => "teszt",
+            "end_date" => "2025-07-24",
+            "status" => 0,
+            "user_id" => 2,
+            "project_id" => 1
+        ]);
     }
 
     /**
